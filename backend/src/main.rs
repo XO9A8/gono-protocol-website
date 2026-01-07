@@ -84,6 +84,23 @@ struct TokenFeature {
     description: String,
 }
 
+#[derive(Serialize)]
+struct ArchitectureLayer {
+    layer: u32,
+    name: String,
+    description: String,
+    components: Vec<String>,
+}
+
+#[derive(Serialize)]
+struct UseCase {
+    id: u32,
+    title: String,
+    description: String,
+    category: String,
+    pallets_used: Vec<String>,
+}
+
 // ================================
 // App State
 // ================================
@@ -132,33 +149,33 @@ async fn get_features() -> impl Responder {
     let features = vec![
         Feature {
             id: 1,
-            title: "Blockchain Provenance".to_string(),
-            description: "Every digital asset receives an immutable blockchain record, creating a transparent and verifiable chain of custody.".to_string(),
-            icon: "blockchain".to_string(),
+            title: "Capture".to_string(),
+            description: "Privacy-first asset capture with zk-SNARK proofs. Generate cryptographic hashes and embed C2PA metadata while preserving creator anonymity for high-stakes journalism.".to_string(),
+            icon: "capture".to_string(),
         },
         Feature {
             id: 2,
-            title: "Real-time Verification".to_string(),
-            description: "Instantly verify the authenticity and origin of any digital content with our AI-powered verification engine.".to_string(),
-            icon: "verify".to_string(),
-        },
-        Feature {
-            id: 3,
-            title: "Decentralized Storage".to_string(),
-            description: "Content is stored across a distributed network, ensuring permanence and censorship resistance.".to_string(),
+            title: "Store".to_string(),
+            description: "Optional permanent storage via Arweave integration. Decentralized content hosting with Storage Endowment subsidies for long-term preservation.".to_string(),
             icon: "storage".to_string(),
         },
         Feature {
+            id: 3,
+            title: "Verify".to_string(),
+            description: "Community attestations powered by SANUB reputation algorithms and AI oracles. Agnostic interface for trust-building across platforms.".to_string(),
+            icon: "verify".to_string(),
+        },
+        Feature {
             id: 4,
-            title: "AI Detection".to_string(),
-            description: "Identify AI-generated content and deepfakes with advanced detection algorithms.".to_string(),
-            icon: "ai".to_string(),
+            title: "Certify".to_string(),
+            description: "ERC-7053 compliant media receipts on the Gono Parachain. Immutable blockchain indexing creates a global 'Media Receipt' ledger with institutional-grade security.".to_string(),
+            icon: "certify".to_string(),
         },
         Feature {
             id: 5,
-            title: "Global Standards".to_string(),
-            description: "Compatible with C2PA, IPTC, and EIP-7053 standards for universal interoperability.".to_string(),
-            icon: "globe".to_string(),
+            title: "Check".to_string(),
+            description: "Public auditing and verification via Gono Explorer. Anyone can validate the authenticity and provenance chain of registered digital assets.".to_string(),
+            icon: "check".to_string(),
         },
     ];
     HttpResponse::Ok().json(wrap_response(features))
@@ -172,7 +189,8 @@ async fn get_archive() -> impl Responder {
             emoji: "🌍".to_string(),
             category: "Planet".to_string(),
             title: "Climate Summit 2024".to_string(),
-            excerpt: "Historic agreements captured and preserved with blockchain provenance.".to_string(),
+            excerpt: "Historic agreements captured and preserved with blockchain provenance."
+                .to_string(),
             date: "Dec 15, 2024".to_string(),
             hash: "0x8f3d9a2b1c4e5f6a7b8c9d0e1f2a3b4c".to_string(),
             verified: true,
@@ -214,14 +232,46 @@ async fn get_archive() -> impl Responder {
 #[get("/api/partners")]
 async fn get_partners() -> impl Responder {
     let partners = vec![
-        Partner { id: 1, name: "Reuters".to_string(), category: "Media".to_string() },
-        Partner { id: 2, name: "Filecoin".to_string(), category: "Storage".to_string() },
-        Partner { id: 3, name: "Protocol Labs".to_string(), category: "Infrastructure".to_string() },
-        Partner { id: 4, name: "C2PA".to_string(), category: "Standards".to_string() },
-        Partner { id: 5, name: "IPTC".to_string(), category: "Standards".to_string() },
-        Partner { id: 6, name: "Starling Lab".to_string(), category: "Research".to_string() },
-        Partner { id: 7, name: "USC Shoah Foundation".to_string(), category: "Archive".to_string() },
-        Partner { id: 8, name: "WITNESS".to_string(), category: "Human Rights".to_string() },
+        Partner {
+            id: 1,
+            name: "Polkadot".to_string(),
+            category: "Infrastructure".to_string(),
+        },
+        Partner {
+            id: 2,
+            name: "Substrate".to_string(),
+            category: "Infrastructure".to_string(),
+        },
+        Partner {
+            id: 3,
+            name: "Arweave".to_string(),
+            category: "Storage".to_string(),
+        },
+        Partner {
+            id: 4,
+            name: "C2PA".to_string(),
+            category: "Standards".to_string(),
+        },
+        Partner {
+            id: 5,
+            name: "Parity Technologies".to_string(),
+            category: "Infrastructure".to_string(),
+        },
+        Partner {
+            id: 6,
+            name: "Web3 Foundation".to_string(),
+            category: "Ecosystem".to_string(),
+        },
+        Partner {
+            id: 7,
+            name: "IPFS".to_string(),
+            category: "Storage".to_string(),
+        },
+        Partner {
+            id: 8,
+            name: "Chainlink".to_string(),
+            category: "Oracles".to_string(),
+        },
     ];
     HttpResponse::Ok().json(wrap_response(partners))
 }
@@ -231,36 +281,36 @@ async fn get_products() -> impl Responder {
     let products = vec![
         Product {
             id: 1,
-            name: "Capture App".to_string(),
-            description: "The blockchain camera that captures photos and videos with instant provenance registration.".to_string(),
+            name: "Gono Moncho News".to_string(),
+            description: "Decentralized journalism platform enabling anonymous reporting with cryptographic proof of authenticity. Built for high-stakes investigative journalism.".to_string(),
             features: vec![
-                "Mobile First".to_string(),
-                "Instant Registration".to_string(),
-                "NFT Creation".to_string(),
+                "ZKP Privacy Protection".to_string(),
+                "C2PA Metadata".to_string(),
+                "Immutable Publishing".to_string(),
             ],
-            link: "https://capture.numbersprotocol.io".to_string(),
+            link: "https://moncho.gono.io".to_string(),
         },
         Product {
             id: 2,
-            name: "Numbers Search".to_string(),
-            description: "Search engine for digital media provenance. Find origin, ownership, and history.".to_string(),
+            name: "Capture SDK".to_string(),
+            description: "Developer toolkit for integrating provenance tracking into any application. Generate cryptographic hashes, embed metadata, and register assets on-chain.".to_string(),
             features: vec![
-                "Reverse Image Search".to_string(),
-                "AI-Powered".to_string(),
-                "Multi-Network".to_string(),
+                "Multi-Platform Support".to_string(),
+                "Modular Architecture".to_string(),
+                "Open Source".to_string(),
             ],
-            link: "https://search.numbersprotocol.io".to_string(),
+            link: "https://github.com/gono-protocol/capture-sdk".to_string(),
         },
         Product {
             id: 3,
-            name: "Dashboard".to_string(),
-            description: "Manage your digital assets, track provenance history, and control AI mining permissions.".to_string(),
+            name: "x402 Micropayment Rail".to_string(),
+            description: "HTTP-402 revival for machine-to-machine commerce. Enable AI agents to pay for data and services per request with stablecoin settlement.".to_string(),
             features: vec![
-                "Analytics".to_string(),
-                "Access Control".to_string(),
-                "Monetization".to_string(),
+                "M2M Payments".to_string(),
+                "Stablecoin Settlement".to_string(),
+                "GONO Protocol Fees".to_string(),
             ],
-            link: "https://dashboard.numbersprotocol.io".to_string(),
+            link: "https://x402.gono.io".to_string(),
         },
     ];
     HttpResponse::Ok().json(wrap_response(products))
@@ -269,34 +319,139 @@ async fn get_products() -> impl Responder {
 #[get("/api/token")]
 async fn get_token_info() -> impl Responder {
     let token = TokenInfo {
-        symbol: "NUM".to_string(),
-        name: "Numbers Protocol Token".to_string(),
+        symbol: "GONO".to_string(),
+        name: "Gono Protocol Token".to_string(),
         total_supply: "1,000,000,000".to_string(),
-        circulating_supply: "450,000,000".to_string(),
+        circulating_supply: "250,000,000".to_string(),
         features: vec![
             TokenFeature {
                 icon: "⚡".to_string(),
-                title: "Transaction Fees".to_string(),
-                description: "Pay for asset registration and verification services".to_string(),
+                title: "Network Gas".to_string(),
+                description: "Pay for ERC-7053 provenance indexing and on-chain transactions"
+                    .to_string(),
             },
             TokenFeature {
-                icon: "🗳️".to_string(),
-                title: "Governance".to_string(),
-                description: "Vote on protocol upgrades and proposals".to_string(),
+                icon: "💾".to_string(),
+                title: "Storage Endowment".to_string(),
+                description: "Subsidize permanent Arweave storage for digital assets".to_string(),
             },
             TokenFeature {
                 icon: "💎".to_string(),
-                title: "Staking Rewards".to_string(),
-                description: "Earn rewards by securing the network".to_string(),
+                title: "Validator Staking".to_string(),
+                description: "Secure the Polkadot Parachain and earn staking rewards".to_string(),
             },
             TokenFeature {
-                icon: "🔄".to_string(),
-                title: "Cross-Chain".to_string(),
-                description: "ERC-20 compatible with BNB bridge".to_string(),
+                icon: "🗳️".to_string(),
+                title: "Governance Rights".to_string(),
+                description:
+                    "Vote on protocol upgrades, pallet activations, and treasury allocation"
+                        .to_string(),
             },
         ],
     };
     HttpResponse::Ok().json(wrap_response(token))
+}
+
+#[get("/api/architecture")]
+async fn get_architecture() -> impl Responder {
+    let architecture = vec![
+        ArchitectureLayer {
+            layer: 1,
+            name: "Polkadot Relay Chain".to_string(),
+            description: "Shared security layer providing institutional-grade protection against censorship and 51% attacks.".to_string(),
+            components: vec![
+                "Shared Security".to_string(),
+                "Cross-Chain Communication".to_string(),
+                "Validator Network".to_string(),
+            ],
+        },
+        ArchitectureLayer {
+            layer: 2,
+            name: "Gono Execution Rail".to_string(),
+            description: "Core Substrate parachain handling mandatory ERC-7053 indexing logic - the global Media Receipt ledger.".to_string(),
+            components: vec![
+                "ERC-7053 Indexing".to_string(),
+                "Transaction Processing".to_string(),
+                "State Management".to_string(),
+            ],
+        },
+        ArchitectureLayer {
+            layer: 3,
+            name: "Modular Service Pallets".to_string(),
+            description: "Optional extensions developers can opt-in based on application needs - pluggable module approach.".to_string(),
+            components: vec![
+                "Store Pallet (Arweave)".to_string(),
+                "Verify Pallet (SANUB)".to_string(),
+                "Privacy Pallet (zk-SNARKs)".to_string(),
+                "x402 Micropayment Pallet".to_string(),
+            ],
+        },
+        ArchitectureLayer {
+            layer: 4,
+            name: "Application Layer".to_string(),
+            description: "User-facing applications and developer tools interfacing with the protocol via decentralized APIs.".to_string(),
+            components: vec![
+                "Gono Moncho News dApp".to_string(),
+                "Capture SDK".to_string(),
+                "Gono Explorer".to_string(),
+                "Third-party Integrations".to_string(),
+            ],
+        },
+    ];
+    HttpResponse::Ok().json(wrap_response(architecture))
+}
+
+#[get("/api/use-cases")]
+async fn get_use_cases() -> impl Responder {
+    let use_cases = vec![
+        UseCase {
+            id: 1,
+            title: "High-Stakes Journalism".to_string(),
+            description: "Anonymous whistleblowing and investigative reporting with cryptographic proof of authenticity. Protect sources while maintaining content integrity.".to_string(),
+            category: "Media".to_string(),
+            pallets_used: vec![
+                "Capture".to_string(),
+                "Privacy (ZKP)".to_string(),
+                "Certify".to_string(),
+                "Store".to_string(),
+            ],
+        },
+        UseCase {
+            id: 2,
+            title: "AI Data Marketplaces".to_string(),
+            description: "Autonomous AI agents buying and selling data with per-request micropayments. Machine-to-machine commerce powered by x402 protocol.".to_string(),
+            category: "AI Commerce".to_string(),
+            pallets_used: vec![
+                "x402 Micropayment".to_string(),
+                "Verify".to_string(),
+                "Certify".to_string(),
+            ],
+        },
+        UseCase {
+            id: 3,
+            title: "Real Estate Digital Twins".to_string(),
+            description: "Immutable property records with provenance tracking for photos, videos, and documents. Pilot program for verifiable real estate assets.".to_string(),
+            category: "Real Estate".to_string(),
+            pallets_used: vec![
+                "Capture".to_string(),
+                "Store".to_string(),
+                "Certify".to_string(),
+                "Check".to_string(),
+            ],
+        },
+        UseCase {
+            id: 4,
+            title: "Academic Research Integrity".to_string(),
+            description: "Timestamped publication of research data and findings. Prevent plagiarism and establish priority claims with blockchain verification.".to_string(),
+            category: "Academia".to_string(),
+            pallets_used: vec![
+                "Capture".to_string(),
+                "Certify".to_string(),
+                "Verify".to_string(),
+            ],
+        },
+    ];
+    HttpResponse::Ok().json(wrap_response(use_cases))
 }
 
 // ================================
@@ -313,16 +468,18 @@ async fn main() -> std::io::Result<()> {
         version: "1.0.0".to_string(),
     });
 
-    println!("🚀 Numbers Protocol Backend v1.0.0");
+    println!("🚀 Gono Protocol Backend v1.0.0");
     println!("📡 Server running at http://localhost:8080");
     println!("📋 Available endpoints:");
-    println!("   GET /api/health   - Health check");
-    println!("   GET /api/stats    - Site statistics");
-    println!("   GET /api/features - Features list");
-    println!("   GET /api/archive  - Archive items");
-    println!("   GET /api/partners - Partners list");
-    println!("   GET /api/products - Products list");
-    println!("   GET /api/token    - Token info");
+    println!("   GET /api/health       - Health check");
+    println!("   GET /api/stats        - Site statistics");
+    println!("   GET /api/features     - 5 Core modules");
+    println!("   GET /api/archive      - Archive items");
+    println!("   GET /api/partners     - Partners list");
+    println!("   GET /api/products     - Gono products");
+    println!("   GET /api/token        - GONO token info");
+    println!("   GET /api/architecture - 4-layer architecture");
+    println!("   GET /api/use-cases    - Platform use cases");
 
     HttpServer::new(move || {
         // Configure CORS
@@ -349,6 +506,8 @@ async fn main() -> std::io::Result<()> {
             .service(get_partners)
             .service(get_products)
             .service(get_token_info)
+            .service(get_architecture)
+            .service(get_use_cases)
     })
     .bind("127.0.0.1:8080")?
     .run()

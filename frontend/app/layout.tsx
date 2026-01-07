@@ -15,7 +15,7 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Numbers Protocol｜Provenance infrastructure for humans and AI",
+  title: "Gono Protocol｜Provenance infrastructure for humans and AI",
   description: "The decentralized provenance standard for securing digital media authenticity through blockchain technology and AI verification.",
   keywords: ["blockchain", "provenance", "digital media", "AI", "verification", "NFT", "Web3"],
 };
