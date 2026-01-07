@@ -28,7 +28,7 @@ export default function Footer() {
                                 <circle cx="8" cy="20" r="3" fill="currentColor" />
                                 <circle cx="32" cy="20" r="3" fill="currentColor" />
                             </svg>
-                            <span className="font-semibold text-lg">Numbers Protocol</span>
+                            <span className="font-semibold text-lg">Gono Protocol</span>
                         </Link>
                         <p className="text-zinc-400 text-sm max-w-xs mb-6">
                             Provenance infrastructure for humans and AI. Building trust in the digital age.
@@ -76,7 +76,7 @@ export default function Footer() {
                 {/* Bottom */}
                 <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/[0.08] gap-4">
                     <p className="text-sm text-zinc-500">
-                        © 2024 Numbers Protocol. All rights reserved.
+                        © 2026 Gono Protocol. All rights reserved.
                     </p>
                     <div className="flex gap-2">
                         <span className="text-xs px-2 py-1 glass rounded text-zinc-500">

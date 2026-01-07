@@ -5,19 +5,19 @@ export default async function Partners() {
 
     // Fallback data if API fails
     const partnerList = partners || [
-        { id: 1, name: "Reuters", category: "Media" },
-        { id: 2, name: "Filecoin", category: "Storage" },
-        { id: 3, name: "Protocol Labs", category: "Infrastructure" },
+        { id: 1, name: "Polkadot", category: "Infrastructure" },
+        { id: 2, name: "Substrate", category: "Infrastructure" },
+        { id: 3, name: "Arweave", category: "Storage" },
         { id: 4, name: "C2PA", category: "Standards" },
-        { id: 5, name: "IPTC", category: "Standards" },
-        { id: 6, name: "Starling Lab", category: "Research" },
+        { id: 5, name: "Parity Technologies", category: "Infrastructure" },
+        { id: 6, name: "Web3 Foundation", category: "Ecosystem" },
     ];
 
     return (
         <section className="py-16 border-y border-white/[0.08] bg-[#111111]">
             <div className="max-w-7xl mx-auto px-6">
                 <p className="text-center text-sm text-zinc-500 uppercase tracking-wider mb-10">
-                    Trusted by leading organizations
+                    Built with industry-leading partners
                 </p>
                 <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
                     {partnerList.map((partner) => (

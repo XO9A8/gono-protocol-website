@@ -1,4 +1,4 @@
-# 🔗 Numbers Protocol
+# 🔗 Gono Protocol
 
 > **Provenance infrastructure for humans and AI**
 
@@ -34,7 +34,7 @@
 ## 📁 Project Structure
 
 ```
-numbers-protocol/
+gono-protocol/
 ├── frontend/                    # Next.js 15 + Tailwind CSS
 │   ├── app/
 │   │   ├── layout.tsx          # Root layout with fonts
@@ -47,7 +47,7 @@ numbers-protocol/
 │   │   ├── Features.tsx        # Feature cards
 │   │   ├── Products.tsx        # Product showcase
 │   │   ├── Archive.tsx         # Archive with filters (API)
-│   │   ├── Ecosystem.tsx       # NUM token section
+│   │   ├── Ecosystem.tsx       # GONO token section
 │   │   ├── CTA.tsx             # Call-to-action
 │   │   ├── Footer.tsx          # Footer links
 │   │   └── Skeleton.tsx        # Loading states
@@ -80,7 +80,7 @@ numbers-protocol/
 ```bash
 # Clone the repository
 git clone <your-repo-url>
-cd numbers-protocol
+cd gono-protocol
 
 # Install frontend dependencies
 cd frontend && npm install
@@ -128,7 +128,7 @@ All endpoints return structured JSON:
 | `/api/archive` | GET | Archived content items |
 | `/api/partners` | GET | Partner organizations |
 | `/api/products` | GET | Product catalog |
-| `/api/token` | GET | NUM token information |
+| `/api/token` | GET | GONO token information |
 
 **Example:**
 ```bash
@@ -207,7 +207,11 @@ NEXT_PUBLIC_API_URL=http://localhost:8080
 
 ## 📄 License
 
-This project is for **educational purposes**. The original design belongs to [Numbers Protocol](https://numbersprotocol.io/).
+---
+
+## 🏢 About Gono Protocol
+
+Gono Protocol is a modular blockchain infrastructure built on Substrate as a Polkadot Parachain. It provides a universal, content-addressable rail for verifiable media, digital assets, and autonomous AI commerce using a "Pluggable Module" approach.
 
 ---
 

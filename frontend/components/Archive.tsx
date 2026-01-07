@@ -66,7 +66,7 @@ export default function Archive() {
                         Archive
                     </span>
                     <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-                        Numbers <em className="font-serif italic text-cyan-400">Archive</em>
+                        Gono <em className="font-serif italic text-cyan-400">Archive</em>
                     </h2>
                     <p className="text-lg text-zinc-400">
                         Preserving significant moments in history with verified provenance.

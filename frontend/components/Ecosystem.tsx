@@ -12,13 +12,13 @@ export default function Ecosystem() {
                 {/* Content */}
                 <div>
                     <span className="inline-block px-3 py-1 text-sm font-medium text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 rounded-full mb-4">
-                        NUM Token
+                        GONO Token
                     </span>
                     <h2 className="text-3xl md:text-4xl font-semibold mb-4">
                         Powering the <em className="font-serif italic text-cyan-400">ecosystem</em>
                     </h2>
                     <p className="text-lg text-zinc-400 mb-8">
-                        NUM is the native utility token that powers the Numbers Protocol ecosystem.
+                        GONO is the native utility token that powers the Gono Protocol ecosystem.
                         Stake, govern, and transact within the decentralized provenance network.
                     </p>
 
@@ -45,7 +45,7 @@ export default function Ecosystem() {
                             href="#"
                             className="gradient-primary px-6 py-3 rounded-lg font-medium hover:scale-105 transition-transform glow-sm"
                         >
-                            Get NUM Token
+                            Get GONO Token
                         </a>
                         <a
                             href="#"
