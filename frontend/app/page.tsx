@@ -3,14 +3,9 @@ import {
   Hero,
   Partners,
   Features,
-  HowItWorks,
-  Architecture,
   Products,
-  X402Micropayment,
-  UseCases,
   Archive,
   Ecosystem,
-  FAQ,
   CTA,
   Footer,
 } from "@/components";
@@ -23,14 +18,9 @@ export default function Home() {
         <Hero />
         <Partners />
         <Features />
-        <HowItWorks />
-        <Architecture />
         <Products />
-        <X402Micropayment />
-        <UseCases />
         <Archive />
         <Ecosystem />
-        <FAQ />
         <CTA />
       </main>
       <Footer />

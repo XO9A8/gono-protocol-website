@@ -61,21 +61,6 @@ export interface TokenFeature {
     description: string;
 }
 
-export interface ArchitectureLayer {
-    layer: number;
-    name: string;
-    description: string;
-    components: string[];
-}
-
-export interface UseCase {
-    id: number;
-    title: string;
-    description: string;
-    category: string;
-    pallets_used: string[];
-}
-
 async function fetchApi<T>(endpoint: string): Promise<T | null> {
     try {
         const response = await fetch(`${API_BASE_URL}${endpoint}`, {
@@ -99,6 +84,4 @@ export const api = {
     getPartners: () => fetchApi<Partner[]>('/api/partners'),
     getProducts: () => fetchApi<Product[]>('/api/products'),
     getToken: () => fetchApi<TokenInfo>('/api/token'),
-    getArchitecture: () => fetchApi<ArchitectureLayer[]>('/api/architecture'),
-    getUseCases: () => fetchApi<UseCase[]>('/api/use-cases'),
 };
