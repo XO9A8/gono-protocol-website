@@ -9,13 +9,13 @@ export default function ComingSoonPage() {
                 <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 text-center py-16">
                     {/* Icon */}
                     <div className="flex justify-center mb-8">
-                        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center">
+                        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
                             <span className="text-4xl">🚀</span>
                         </div>
                     </div>
 
                     {/* Title */}
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-300 via-orange-300 to-amber-300 bg-clip-text text-transparent">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-300 via-red-300 to-red-300 bg-clip-text text-transparent">
                         Coming Soon
                     </h1>
 
@@ -34,10 +34,10 @@ export default function ComingSoonPage() {
                         <div className="glass rounded-2xl p-6 border border-zinc-800">
                             <div className="flex items-center justify-between mb-3">
                                 <span className="text-sm text-zinc-400">Development Progress</span>
-                                <span className="text-sm font-semibold text-amber-400">In Progress</span>
+                                <span className="text-sm font-semibold text-red-400">In Progress</span>
                             </div>
                             <div className="w-full bg-zinc-800 rounded-full h-2 overflow-hidden">
-                                <div className="h-full bg-gradient-to-r from-amber-500 to-orange-600 rounded-full animate-pulse" style={{ width: '45%' }}></div>
+                                <div className="h-full bg-gradient-to-r from-red-500 to-red-600 rounded-full animate-pulse" style={{ width: '45%' }}></div>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@ export default function ComingSoonPage() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <Link
                             href="/"
-                            className="px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-lg font-semibold hover:from-amber-600 hover:to-orange-700 transition-all shadow-lg shadow-amber-500/20"
+                            className="px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg font-semibold hover:from-red-600 hover:to-red-700 transition-all shadow-lg shadow-red-500/20"
                         >
                             Back to Home
                         </Link>

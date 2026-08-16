@@ -40,7 +40,7 @@ export default async function UseCases() {
         Media: { bg: 'bg-purple-500/10', border: 'border-purple-500/50', text: 'text-purple-400' },
         'AI Commerce': { bg: 'bg-cyan-500/10', border: 'border-cyan-500/50', text: 'text-cyan-400' },
         'Real Estate': { bg: 'bg-emerald-500/10', border: 'border-emerald-500/50', text: 'text-emerald-400' },
-        Academia: { bg: 'bg-amber-500/10', border: 'border-amber-500/50', text: 'text-amber-400' },
+        Academia: { bg: 'bg-red-500/10', border: 'border-red-500/50', text: 'text-red-400' },
     };
 
 

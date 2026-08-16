@@ -38,7 +38,7 @@ export default function DeepfakeProtectionPage() {
                         </div>
                     </div>
 
-                    <div className="prose prose-invert prose-amber max-w-none">
+                    <div className="prose prose-invert prose-red max-w-none">
                         <section className="mb-12">
                             <h2 className="text-3xl font-bold text-zinc-300 mb-4">The Problem: The Rise of Undetectable Deepfakes</h2>
 

@@ -38,12 +38,12 @@ export default function AcademicCredentialsPage() {
                     </div>
 
                     {/* Content */}
-                    <div className="prose prose-invert prose-amber max-w-none">
+                    <div className="prose prose-invert prose-red max-w-none">
                         {/* The Crisis */}
                         <section className="mb-12">
                             <h2 className="text-3xl font-bold text-zinc-300 mb-6">The Global Credential Crisis</h2>
 
-                            <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 border-l-4 border-red-500 p-6 rounded-r-lg mb-6">
+                            <div className="bg-gradient-to-r from-red-500/10 to-red-500/10 border-l-4 border-red-500 p-6 rounded-r-lg mb-6">
                                 <p className="text-gray-200 text-lg font-semibold mb-2">The Scale of the Problem</p>
                                 <ul className="space-y-2 text-gray-300">
                                     <li><strong>1 million+ fake degrees</strong> are sold annually worldwide</li>
@@ -96,7 +96,7 @@ export default function AcademicCredentialsPage() {
                                     </p>
                                 </div>
 
-                                <div className="bg-gradient-to-br from-orange-900/20 to-orange-800/10 border border-orange-500/30 p-6 rounded-lg">
+                                <div className="bg-gradient-to-br from-red-900/20 to-red-800/10 border border-red-500/30 p-6 rounded-lg">
                                     <h3 className="text-xl font-semibold text-blue-200 mb-3">🏗️ Engineering Disaster</h3>
                                     <p className="text-gray-300 text-sm leading-relaxed">
                                         Bridge collapses and building failures traced to engineers with fraudulent degrees. Lives lost because credentials weren't verifiable at the point of hiring.
@@ -129,7 +129,7 @@ export default function AcademicCredentialsPage() {
 
                             {/* Phase 1: CAPTURE */}
                             <div className="mb-10">
-                                <div className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 border-l-4 border-stone-500 p-6 rounded-r-lg mb-6">
+                                <div className="bg-gradient-to-r from-red-500/20 to-red-500/20 border-l-4 border-stone-500 p-6 rounded-r-lg mb-6">
                                     <h3 className="text-2xl font-bold text-zinc-300 mb-3">Phase 1: CAPTURE — Issuing Verifiable Credentials</h3>
                                     <p className="text-gray-300 mb-4">
                                         Universities, training programs, and certification bodies issue blockchain-anchored credentials at the moment of achievement.
@@ -385,7 +385,7 @@ export default function AcademicCredentialsPage() {
                                             <div className="pl-4 border-l-2 border-pink-500">
                                                 <strong className="text-white">2025:</strong> Published 3 papers on blockchain scalability (DOIs linked to DID)
                                             </div>
-                                            <div className="pl-4 border-l-2 border-orange-500">
+                                            <div className="pl-4 border-l-2 border-red-500">
                                                 <strong className="text-white">2026:</strong> MSc Blockchain Engineering, MIT (in progress, 18/36 credits verified)
                                             </div>
                                         </div>
@@ -530,7 +530,7 @@ export default function AcademicCredentialsPage() {
                                     </ul>
                                 </div>
 
-                                <div className="bg-gradient-to-r from-zinc-900/20 to-amber-800/10 border-l-4 border-stone-500 p-6 rounded-r-lg">
+                                <div className="bg-gradient-to-r from-zinc-900/20 to-red-800/10 border-l-4 border-stone-500 p-6 rounded-r-lg">
                                     <h3 className="text-xl font-semibold text-zinc-300 mb-3">Phase 4: Professional Licensing (2027+)</h3>
                                     <ul className="space-y-2 text-gray-300">
                                         <li>• Medical councils verify doctor credentials via Gono (prevent fake doctors)</li>
@@ -543,7 +543,7 @@ export default function AcademicCredentialsPage() {
                         </section>
 
                         {/* Impact Metrics */}
-                        <section className="mb-12 bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-zinc-600/30 p-8 rounded-lg">
+                        <section className="mb-12 bg-gradient-to-r from-red-500/10 to-red-500/10 border border-zinc-600/30 p-8 rounded-lg">
                             <h2 className="text-2xl font-bold text-zinc-300 mb-6">Projected Impact (10-Year Horizon)</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
@@ -602,7 +602,7 @@ export default function AcademicCredentialsPage() {
                         </section>
 
                         {/* CTA */}
-                        <div className="text-center py-12 bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-lg border border-zinc-600/30">
+                        <div className="text-center py-12 bg-gradient-to-r from-red-500/10 to-red-500/10 rounded-lg border border-zinc-600/30">
                             <h2 className="text-3xl font-bold text-white mb-4">
                                 Ready to Eliminate Diploma Fraud?
                             </h2>
@@ -612,7 +612,7 @@ export default function AcademicCredentialsPage() {
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Link
                                     href="/#products"
-                                    className="px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-lg font-semibold hover:from-amber-600 hover:to-orange-600 transition-all shadow-lg hover:shadow-amber-500/50"
+                                    className="px-8 py-4 bg-gradient-to-r from-red-500 to-red-500 text-white rounded-lg font-semibold hover:from-red-600 hover:to-red-600 transition-all shadow-lg hover:shadow-red-500/50"
                                 >
                                     Issue Credentials
                                 </Link>

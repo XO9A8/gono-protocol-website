@@ -38,7 +38,15 @@ next-env.d.ts
 Thumbs.db
 
 # Rust
+target/
+target-ci/
+target-test/
 backend/target/
 **/*.rs.bk
-Cargo.lock
 *.bak
+
+# Whitepaper source drafts
+GonoProtocol_whitepaper.md
+gono_protocol_whitepaper.tex
+*.tex
+

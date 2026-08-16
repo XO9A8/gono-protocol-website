@@ -10,7 +10,7 @@ export default function JournalismPage() {
                     {/* Back Link */}
                     <Link 
                         href="/use-cases" 
-                        className="inline-flex items-center text-amber-500 hover:text-amber-400 mb-8 transition-colors"
+                        className="inline-flex items-center text-red-500 hover:text-red-400 mb-8 transition-colors"
                     >
                         <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -20,7 +20,7 @@ export default function JournalismPage() {
 
                     {/* Header */}
                     <div className="mb-12">
-                        <div className="inline-block px-4 py-2 bg-amber-500/10 border border-amber-500/30 rounded-full text-amber-500 text-sm font-medium mb-6 uppercase tracking-wider">
+                        <div className="inline-block px-4 py-2 bg-red-500/10 border border-red-500/30 rounded-full text-red-500 text-sm font-medium mb-6 uppercase tracking-wider">
                             Use Case D
                         </div>
                         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
@@ -32,10 +32,10 @@ export default function JournalismPage() {
                     </div>
 
                     {/* Content */}
-                    <div className="prose prose-invert prose-amber max-w-none">
+                    <div className="prose prose-invert prose-red max-w-none">
                         {/* The Problem */}
                         <section className="mb-12">
-                            <h2 className="text-3xl font-bold text-amber-400 mb-4">The Problem</h2>
+                            <h2 className="text-3xl font-bold text-red-400 mb-4">The Problem</h2>
                             <p className="text-gray-300 leading-relaxed mb-4">
                                 Investigative journalism and field reporting face:
                             </p>
@@ -57,11 +57,11 @@ export default function JournalismPage() {
 
                         {/* The Solution */}
                         <section className="mb-12">
-                            <h2 className="text-3xl font-bold text-amber-400 mb-6">The Solution: Gono Protocol for Journalism Provenance</h2>
+                            <h2 className="text-3xl font-bold text-red-400 mb-6">The Solution: Gono Protocol for Journalism Provenance</h2>
                             
                             <div className="space-y-8">
                                 <div className="bg-gray-900/50 border border-gray-800 p-6 rounded-lg">
-                                    <h3 className="text-xl font-bold text-amber-500 mb-3">Capture</h3>
+                                    <h3 className="text-xl font-bold text-red-500 mb-3">Capture</h3>
                                     <ul className="space-y-2 text-gray-300">
                                         <li>• Journalist creates an <strong>Assignment Anchor</strong> — a digital record capturing:
                                             <ul className="ml-6 mt-2 space-y-1">
@@ -76,7 +76,7 @@ export default function JournalismPage() {
                                 </div>
 
                                 <div className="bg-gray-900/50 border border-gray-800 p-6 rounded-lg">
-                                    <h3 className="text-xl font-bold text-amber-500 mb-3">Certify</h3>
+                                    <h3 className="text-xl font-bold text-red-500 mb-3">Certify</h3>
                                     <ul className="space-y-2 text-gray-300">
                                         <li>• Funds from sponsors are held in smart contract escrow (in stablecoins)</li>
                                         <li>• When reporter reaches a milestone, a witness node (e.g., editor) attests with on-chain signature</li>
@@ -93,7 +93,7 @@ export default function JournalismPage() {
                                 </div>
 
                                 <div className="bg-gray-900/50 border border-gray-800 p-6 rounded-lg">
-                                    <h3 className="text-xl font-bold text-amber-500 mb-3">Check</h3>
+                                    <h3 className="text-xl font-bold text-red-500 mb-3">Check</h3>
                                     <ul className="space-y-2 text-gray-300">
                                         <li>• Any sponsor can query Gono Protocol to see full chronology from first dollar to publication</li>
                                         <li>• Verify funds were used as intended</li>
@@ -105,32 +105,32 @@ export default function JournalismPage() {
                         </section>
 
                         {/* Key Benefits */}
-                        <section className="mb-12 bg-amber-500/5 border border-amber-500/20 p-8 rounded-lg">
-                            <h2 className="text-2xl font-bold text-amber-400 mb-4">Key Benefits</h2>
+                        <section className="mb-12 bg-red-500/5 border border-red-500/20 p-8 rounded-lg">
+                            <h2 className="text-2xl font-bold text-red-400 mb-4">Key Benefits</h2>
                             <div className="grid md:grid-cols-2 gap-4">
                                 <div className="flex items-start gap-2">
-                                    <span className="text-amber-500 text-xl">✓</span>
+                                    <span className="text-red-500 text-xl">✓</span>
                                     <div>
                                         <strong className="text-white">Transparent Funding:</strong>
                                         <span className="text-gray-300"> Full accountability to donors</span>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-2">
-                                    <span className="text-amber-500 text-xl">✓</span>
+                                    <span className="text-red-500 text-xl">✓</span>
                                     <div>
                                         <strong className="text-white">Milestone Verification:</strong>
                                         <span className="text-gray-300"> Automated payment releases</span>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-2">
-                                    <span className="text-amber-500 text-xl">✓</span>
+                                    <span className="text-red-500 text-xl">✓</span>
                                     <div>
                                         <strong className="text-white">Content Authenticity:</strong>
                                         <span className="text-gray-300"> C2PA verified media</span>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-2">
-                                    <span className="text-amber-500 text-xl">✓</span>
+                                    <span className="text-red-500 text-xl">✓</span>
                                     <div>
                                         <strong className="text-white">Fair Compensation:</strong>
                                         <span className="text-gray-300"> Direct reader micropayments</span>
@@ -143,7 +143,7 @@ export default function JournalismPage() {
                         <div className="text-center py-8">
                             <Link
                                 href="/docs"
-                                className="inline-block px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-black font-semibold rounded-lg hover:from-amber-400 hover:to-orange-400 transition-all duration-300"
+                                className="inline-block px-8 py-4 bg-gradient-to-r from-red-500 to-red-500 text-black font-semibold rounded-lg hover:from-red-400 hover:to-red-400 transition-all duration-300"
                             >
                                 Learn More in Documentation
                             </Link>

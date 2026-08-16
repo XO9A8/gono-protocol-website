@@ -38,12 +38,12 @@ export default function VotingIntegrityPage() {
                     </div>
 
                     {/* Content */}
-                    <div className="prose prose-invert prose-amber max-w-none">
+                    <div className="prose prose-invert prose-red max-w-none">
                         {/* The Crisis */}
                         <section className="mb-12">
                             <h2 className="text-3xl font-bold text-zinc-300 mb-6">The Global Democracy Crisis</h2>
 
-                            <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 border-l-4 border-red-500 p-6 rounded-r-lg mb-6">
+                            <div className="bg-gradient-to-r from-red-500/10 to-red-500/10 border-l-4 border-red-500 p-6 rounded-r-lg mb-6">
                                 <p className="text-gray-200 text-lg font-semibold mb-2">Democracy Under Attack</p>
                                 <ul className="space-y-2 text-gray-300">
                                     <li><strong>57% of global population</strong> lives in countries with declining democratic quality (V-Dem Institute, 2024)</li>
@@ -96,7 +96,7 @@ export default function VotingIntegrityPage() {
                                     </p>
                                 </div>
 
-                                <div className="bg-gradient-to-br from-orange-900/20 to-orange-800/10 border border-orange-500/30 p-6 rounded-lg">
+                                <div className="bg-gradient-to-br from-red-900/20 to-red-800/10 border border-red-500/30 p-6 rounded-lg">
                                     <h3 className="text-xl font-semibold text-blue-200 mb-3">🇻🇪 Venezuela 2024: Digital Authoritarianism</h3>
                                     <p className="text-gray-300 text-sm leading-relaxed">
                                         Government claimed Maduro won with 51%. Opposition has receipts proving otherwise. CNE (election authority) refuses to release precinct-level data. No international observers allowed. <strong>Result: Authoritarian regime continues, millions flee.</strong>
@@ -210,7 +210,7 @@ export default function VotingIntegrityPage() {
 
                             {/* Phase 2: VOTING PROCESS */}
                             <div className="mb-10">
-                                <div className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 border-l-4 border-stone-500 p-6 rounded-r-lg mb-6">
+                                <div className="bg-gradient-to-r from-red-500/20 to-red-500/20 border-l-4 border-stone-500 p-6 rounded-r-lg mb-6">
                                     <h3 className="text-2xl font-bold text-zinc-300 mb-3">Phase 2: CERTIFY — Anonymous Ballot Submission & Blockchain Registration</h3>
                                     <p className="text-gray-300 mb-4">
                                         Voters cast ballots that are cryptographically verifiable yet completely anonymous. Blockchain records every vote, but no one can trace votes to voters.
@@ -598,7 +598,7 @@ export default function VotingIntegrityPage() {
                                     </ul>
                                 </div>
 
-                                <div className="bg-gradient-to-r from-zinc-900/20 to-amber-800/10 border-l-4 border-stone-500 p-6 rounded-r-lg">
+                                <div className="bg-gradient-to-r from-zinc-900/20 to-red-800/10 border-l-4 border-stone-500 p-6 rounded-r-lg">
                                     <h3 className="text-xl font-semibold text-zinc-300 mb-3">Phase 4: Global Standard (2028+)</h3>
                                     <ul className="space-y-2 text-gray-300">
                                         <li>• EU pilots Gono for European Parliament elections</li>
@@ -612,7 +612,7 @@ export default function VotingIntegrityPage() {
                         </section>
 
                         {/* Impact Metrics */}
-                        <section className="mb-12 bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-zinc-600/30 p-8 rounded-lg">
+                        <section className="mb-12 bg-gradient-to-r from-red-500/10 to-red-500/10 border border-zinc-600/30 p-8 rounded-lg">
                             <h2 className="text-2xl font-bold text-zinc-300 mb-6">Projected Impact (10-Year Horizon)</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
@@ -667,7 +667,7 @@ export default function VotingIntegrityPage() {
                                         International election observation enhanced. Cross-border verification enables global democratic solidarity. UN, EU, AU collaboration on election integrity.
                                     </p>
                                 </div>
-                                <div className="bg-amber-900/20 border border-zinc-600/30 p-5 rounded-lg">
+                                <div className="bg-red-900/20 border border-zinc-600/30 p-5 rounded-lg">
                                     <div className="text-2xl mb-2">💪</div>
                                     <h3 className="text-lg font-semibold text-zinc-300 mb-2">SDG 5: Gender Equality</h3>
                                     <p className="text-gray-300 text-sm">
@@ -678,7 +678,7 @@ export default function VotingIntegrityPage() {
                         </section>
 
                         {/* CTA */}
-                        <div className="text-center py-12 bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-lg border border-zinc-600/30">
+                        <div className="text-center py-12 bg-gradient-to-r from-red-500/10 to-red-500/10 rounded-lg border border-zinc-600/30">
                             <h2 className="text-3xl font-bold text-white mb-4">
                                 Ready to Protect Democracy?
                             </h2>
@@ -688,7 +688,7 @@ export default function VotingIntegrityPage() {
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Link
                                     href="/#products"
-                                    className="px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-lg font-semibold hover:from-amber-600 hover:to-orange-600 transition-all shadow-lg hover:shadow-amber-500/50"
+                                    className="px-8 py-4 bg-gradient-to-r from-red-500 to-red-500 text-white rounded-lg font-semibold hover:from-red-600 hover:to-red-600 transition-all shadow-lg hover:shadow-red-500/50"
                                 >
                                     Build Voting Infrastructure
                                 </Link>

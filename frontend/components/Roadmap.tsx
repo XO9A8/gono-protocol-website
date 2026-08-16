@@ -74,7 +74,7 @@ export default function Roadmap() {
     const getStatusColor = (status: string) => {
         switch (status) {
             case 'completed': return 'from-emerald-500 to-green-600';
-            case 'current': return 'from-amber-500 to-orange-600';
+            case 'current': return 'from-red-500 to-red-600';
             case 'upcoming': return 'from-indigo-500 to-purple-600';
             case 'planned': return 'from-cyan-500 to-blue-600';
             case 'vision': return 'from-violet-500 to-purple-600';
@@ -84,15 +84,15 @@ export default function Roadmap() {
 
     return (
         <section className="py-16 sm:py-24 relative overflow-hidden bg-[#111111]">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-950/5 to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-950/5 to-transparent pointer-events-none"></div>
 
             <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="text-center mb-16 sm:mb-20">
-                    <span className="inline-block px-3 py-1 text-sm font-medium text-amber-500 bg-amber-500/10 border border-amber-500/20 rounded-full mb-4">
+                    <span className="inline-block px-3 py-1 text-sm font-medium text-red-500 bg-red-500/10 border border-red-500/20 rounded-full mb-4">
                         Trajectory
                     </span>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-                        <span className="bg-gradient-to-r from-amber-200 via-orange-200 to-amber-200 bg-clip-text text-transparent">Strategic Roadmap</span>
+                        <span className="bg-gradient-to-r from-red-200 via-red-200 to-red-200 bg-clip-text text-transparent">Strategic Roadmap</span>
                     </h2>
                     <p className="text-zinc-400 max-w-2xl mx-auto text-lg">
                         Our journey from concept to global ecosystem.
@@ -102,7 +102,7 @@ export default function Roadmap() {
                 {/* Central Spine Container */}
                 <div className="relative">
                     {/* Vertical Line */}
-                    <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-500/20 via-amber-500/20 to-violet-500/20 md:-ml-[1px]"></div>
+                    <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-500/20 via-red-500/20 to-violet-500/20 md:-ml-[1px]"></div>
 
                     <div className="space-y-12 sm:space-y-20">
                         {/* Current Status - Prominent */}
@@ -133,7 +133,7 @@ export default function Roadmap() {
 
                                     {/* Card */}
                                     <div className={`w-full md:w-1/2 pl-12 md:pl-0 ${isLeft ? 'md:pr-16' : 'md:pl-16'}`}>
-                                        <div className={`group relative p-6 sm:p-8 rounded-2xl border border-white/[0.08] bg-[#1a1a1a]/50 backdrop-blur-sm transition-all hover:border-white/[0.15] hover:-translate-y-1 ${phase.status === 'current' ? 'ring-1 ring-amber-500/30 bg-amber-950/10' : ''}`}>
+                                        <div className={`group relative p-6 sm:p-8 rounded-2xl border border-white/[0.08] bg-[#1a1a1a]/50 backdrop-blur-sm transition-all hover:border-white/[0.15] hover:-translate-y-1 ${phase.status === 'current' ? 'ring-1 ring-red-500/30 bg-red-950/10' : ''}`}>
 
                                             {/* Phase Number Watermark */}
                                             <div className="absolute top-4 right-4 text-6xl font-black text-white/[0.02] select-none pointer-events-none">
@@ -145,7 +145,7 @@ export default function Roadmap() {
                                                     <span className={`p-2 rounded-lg bg-white/5 text-white`}>
                                                         {getStatusIcon(phase.status)}
                                                     </span>
-                                                    <span className={`text-xs font-semibold px-2 py-0.5 rounded-full border border-white/10 ${phase.status === 'current' ? 'text-amber-400 bg-amber-400/10' : 'text-zinc-500'}`}>
+                                                    <span className={`text-xs font-semibold px-2 py-0.5 rounded-full border border-white/10 ${phase.status === 'current' ? 'text-red-400 bg-red-400/10' : 'text-zinc-500'}`}>
                                                         {phase.status.toUpperCase()}
                                                     </span>
                                                 </div>
@@ -161,19 +161,19 @@ export default function Roadmap() {
                                                 {phase.status === 'current' && (
                                                     <div className="mt-4 pt-4 border-t border-white/5">
                                                         <div className="flex items-center justify-between text-xs mb-2">
-                                                            <span className="text-amber-400 font-medium">Progress</span>
+                                                            <span className="text-red-400 font-medium">Progress</span>
                                                             <span className="text-white">{phase.progress}%</span>
                                                         </div>
                                                         <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                                                            <div className="h-full bg-gradient-to-r from-amber-500 to-orange-500" style={{ width: `${phase.progress}%` }}></div>
+                                                            <div className="h-full bg-gradient-to-r from-red-500 to-red-500" style={{ width: `${phase.progress}%` }}></div>
                                                         </div>
                                                         <div className="grid grid-cols-2 gap-2 mt-3">
                                                             <div className="flex items-center gap-1.5 text-xs text-zinc-400">
-                                                                <Target className="w-3 h-3 text-amber-500" />
+                                                                <Target className="w-3 h-3 text-red-500" />
                                                                 Whitepaper
                                                             </div>
                                                             <div className="flex items-center gap-1.5 text-xs text-zinc-400">
-                                                                <MapPin className="w-3 h-3 text-amber-500" />
+                                                                <MapPin className="w-3 h-3 text-red-500" />
                                                                 Q1 2026
                                                             </div>
                                                         </div>

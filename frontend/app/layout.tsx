@@ -1,23 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const robotoMono = Roboto_Mono({
-  variable: "--font-roboto-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
+import { Loader, SmoothScroll } from "@/components";
 
 export const metadata: Metadata = {
-  title: "Gono Protocol｜Provenance infrastructure for humans and AI",
-  description: "The decentralized provenance standard for securing digital media authenticity through blockchain technology and AI verification.",
-  keywords: ["blockchain", "provenance", "digital media", "AI", "verification", "NFT", "Web3"],
+  title: "Gono Protocol | Modular Blockchain Infrastructure",
+  description:
+    "A premium homepage for Gono Protocol, the modular blockchain infrastructure for verifiable media and autonomous commerce.",
+  keywords: [
+    "blockchain",
+    "verifiable media",
+    "autonomous commerce",
+    "modular infrastructure",
+    "AI commerce",
+    "privacy",
+    "Web3",
+  ],
 };
 
 export const viewport = {
@@ -33,10 +30,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${robotoMono.variable} antialiased bg-[#0a0a0a] text-white overflow-x-hidden`}
-      >
-        {children}
+      <body className="overflow-x-hidden bg-[var(--background)] text-white antialiased">
+        <SmoothScroll>
+          <Loader />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

@@ -41,7 +41,7 @@ export default function JournalismPage() {
                     </div>
 
                     {/* Content */}
-                    <div className="prose prose-invert prose-amber max-w-none">
+                    <div className="prose prose-invert prose-red max-w-none">
                         {/* The Problem */}
                         <section className="mb-12">
                             <h2 className="text-3xl font-bold text-zinc-300 mb-4">The Problem: A Crisis of Trust in Modern Journalism</h2>
