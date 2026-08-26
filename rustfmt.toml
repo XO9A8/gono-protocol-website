@@ -1,0 +1,8 @@
+# Substrate style guide conventions
+hard_tabs = true
+tab_spaces = 4
+max_width = 100
+use_small_heuristics = "Default"
+edition = "2021"
+newline_style = "Unix"
+reorder_imports = true

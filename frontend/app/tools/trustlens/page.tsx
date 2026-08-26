@@ -8,16 +8,16 @@ export default function TrustLensPage() {
             <main className="min-h-screen pt-20">
                 {/* Hero Section */}
                 <section className="relative overflow-hidden py-16 sm:py-24">
-                    <div className="absolute inset-0 bg-gradient-to-b from-amber-950/20 via-transparent to-transparent pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-red-950/20 via-transparent to-transparent pointer-events-none"></div>
                     
                     <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6">
                         <div className="text-center mb-12">
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 mb-6">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-6">
                                 <span className="text-2xl">📸</span>
-                                <span className="text-sm font-medium text-amber-400">TrustLens</span>
+                                <span className="text-sm font-medium text-red-400">TrustLens</span>
                             </div>
                             
-                            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-300 via-orange-300 to-amber-300 bg-clip-text text-transparent">
+                            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-300 via-red-300 to-red-300 bg-clip-text text-transparent">
                                 Provide Real Proof<br />for Your Images
                             </h1>
                             
@@ -33,9 +33,9 @@ export default function TrustLensPage() {
 
                         {/* Coming Soon Badge */}
                         <div className="flex justify-center mb-12">
-                            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/30">
+                            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-red-500/20 to-red-500/20 border border-red-500/30">
                                 <span className="text-2xl">🚀</span>
-                                <span className="text-lg font-semibold text-amber-400">Coming Soon</span>
+                                <span className="text-lg font-semibold text-red-400">Coming Soon</span>
                             </div>
                         </div>
                     </div>
@@ -46,9 +46,9 @@ export default function TrustLensPage() {
                     <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             {/* Mobile App */}
-                            <div className="glass rounded-2xl p-8 border border-zinc-800 hover:border-amber-500/30 transition-all">
+                            <div className="glass rounded-2xl p-8 border border-zinc-800 hover:border-red-500/30 transition-all">
                                 <div className="flex items-center gap-3 mb-6">
-                                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center">
+                                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
                                         <span className="text-2xl">📱</span>
                                     </div>
                                     <h2 className="text-2xl sm:text-3xl font-bold text-white">Mobile Application</h2>
@@ -115,7 +115,7 @@ export default function TrustLensPage() {
                             </div>
 
                             {/* Browser Extension */}
-                            <div className="glass rounded-2xl p-8 border border-zinc-800 hover:border-amber-500/30 transition-all">
+                            <div className="glass rounded-2xl p-8 border border-zinc-800 hover:border-red-500/30 transition-all">
                                 <div className="flex items-center gap-3 mb-6">
                                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center">
                                         <span className="text-2xl">🧩</span>
@@ -188,11 +188,11 @@ export default function TrustLensPage() {
 
                 {/* Why TrustLens Section */}
                 <section className="py-16 sm:py-20 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-950/10 to-transparent pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-950/10 to-transparent pointer-events-none"></div>
                     
                     <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-amber-300 to-orange-300 bg-clip-text text-transparent">
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-red-300 to-red-300 bg-clip-text text-transparent">
                                 Why TrustLens?
                             </h2>
                             <p className="text-lg text-zinc-400 max-w-3xl mx-auto">
@@ -242,7 +242,7 @@ export default function TrustLensPage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                             <div className="text-center">
-                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center mx-auto mb-4">
+                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mx-auto mb-4">
                                     <span className="text-2xl font-bold text-white">1</span>
                                 </div>
                                 <h3 className="text-lg font-bold text-white mb-2">Capture</h3>
@@ -286,7 +286,7 @@ export default function TrustLensPage() {
 
                 {/* CTA Section */}
                 <section className="py-16 sm:py-24 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-orange-500/10 pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-red-500/10 pointer-events-none"></div>
                     
                     <div className="relative w-full max-w-4xl mx-auto px-4 sm:px-6 text-center">
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-white">
@@ -299,7 +299,7 @@ export default function TrustLensPage() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <Link
                                 href="/docs"
-                                className="px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-lg font-semibold hover:from-amber-600 hover:to-orange-700 transition-all shadow-lg shadow-amber-500/20"
+                                className="px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg font-semibold hover:from-red-600 hover:to-red-700 transition-all shadow-lg shadow-red-500/20"
                             >
                                 View Documentation
                             </Link>

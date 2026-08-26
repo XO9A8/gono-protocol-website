@@ -1,0 +1,25 @@
+[package]
+name = "gono-c2pa-bridge"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+publish = false
+description = "Thin C2PA bridge service for Gono Protocol — sign, verify, upload to IPFS, and produce on-chain commit payloads."
+
+[[bin]]
+name = "gono-c2pa"
+path = "src/main.rs"
+
+[dependencies]
+c2pa = { version = "0.90", default-features = false, features = ["file_io", "rust_native_crypto"] }
+sha2 = "0.10"
+hex = "0.4"
+reqwest = { version = "0.12", features = ["json", "multipart"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+clap = { version = "4.5", features = ["derive"] }
+anyhow = "1.0"
+
+[dev-dependencies]
+tempfile = "3.15"

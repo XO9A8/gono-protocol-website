@@ -38,7 +38,7 @@ export default function UtilitiesPage() {
                         </div>
                     </div>
 
-                    <div className="prose prose-invert prose-amber max-w-none">
+                    <div className="prose prose-invert prose-red max-w-none">
                         {/* Use Case A: NEIR */}
                         <section className="mb-12">
                             <h2 className="text-3xl font-bold text-zinc-300 mb-4">Use Case A: NEIR (National Equipment Identity Register) — BTRC</h2>

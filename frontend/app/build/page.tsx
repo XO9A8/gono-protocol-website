@@ -13,13 +13,13 @@ export default function BuildOnGono() {
 
                     {/* Gradient Orbs */}
                     <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse" />
-                    <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+                    <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
 
                     {/* Content */}
                     <div className="relative z-10 max-w-4xl mx-auto text-center">
                         {/* Icon */}
                         <div className="mb-8 flex justify-center">
-                            <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-indigo-500 to-amber-500 p-0.5">
+                            <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-indigo-500 to-red-500 p-0.5">
                                 <div className="w-full h-full bg-[#0a0a0a] rounded-2xl flex items-center justify-center">
                                     <svg
                                         className="w-12 h-12 text-indigo-400"
@@ -46,7 +46,7 @@ export default function BuildOnGono() {
                         </div>
 
                         {/* Title */}
-                        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-indigo-200 to-amber-200 bg-clip-text text-transparent">
+                        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-indigo-200 to-red-200 bg-clip-text text-transparent">
                             Build on Gono
                         </h1>
 
@@ -56,12 +56,12 @@ export default function BuildOnGono() {
                         </p>
 
                         {/* Status Badge */}
-                        <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-amber-500/10 border border-amber-500/20 mb-12">
+                        <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-red-500/10 border border-red-500/20 mb-12">
                             <div className="relative">
-                                <div className="w-3 h-3 bg-amber-500 rounded-full animate-ping absolute" />
-                                <div className="w-3 h-3 bg-amber-500 rounded-full" />
+                                <div className="w-3 h-3 bg-red-500 rounded-full animate-ping absolute" />
+                                <div className="w-3 h-3 bg-red-500 rounded-full" />
                             </div>
-                            <span className="text-amber-400 font-semibold tracking-wide">UNDER DEVELOPMENT</span>
+                            <span className="text-red-400 font-semibold tracking-wide">UNDER DEVELOPMENT</span>
                         </div>
 
                         {/* Description */}

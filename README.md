@@ -3,11 +3,14 @@
 > **Provenance infrastructure for humans and AI**
 
 <p align="center">
+  <img src="https://img.shields.io/badge/Polkadot%20SDK-2606.0.0-E6007A?style=for-the-badge&logo=polkadot" alt="Polkadot SDK"/>
+  <img src="https://img.shields.io/badge/Substrate-FRAME%20v48-blue?style=for-the-badge&logo=polkadot" alt="Substrate FRAME"/>
+  <img src="https://img.shields.io/badge/Rust-2021-orange?style=for-the-badge&logo=rust" alt="Rust"/>
+  <img src="https://img.shields.io/badge/Tests-81%20Passing-brightgreen?style=for-the-badge" alt="Tests"/>
+  <img src="https://img.shields.io/github/actions/workflow/status/Meherajs/gono-protocol-website/ci.yml?branch=main&style=for-the-badge&label=CI" alt="CI Status"/>
   <img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js" alt="Next.js"/>
   <img src="https://img.shields.io/badge/React-19-61dafb?style=for-the-badge&logo=react" alt="React"/>
   <img src="https://img.shields.io/badge/Tailwind-4.0-38bdf8?style=for-the-badge&logo=tailwindcss" alt="Tailwind"/>
-  <img src="https://img.shields.io/badge/TypeScript-5.0-3178c6?style=for-the-badge&logo=typescript" alt="TypeScript"/>
-  <img src="https://img.shields.io/badge/Rust-2021-orange?style=for-the-badge&logo=rust" alt="Rust"/>
   <img src="https://img.shields.io/badge/Actix--web-4.0-000000?style=for-the-badge" alt="Actix"/>
   <img src="https://img.shields.io/badge/Vercel-Deployed-000?style=for-the-badge&logo=vercel" alt="Vercel"/>
 </p>
@@ -16,290 +19,138 @@
 
 ## 🏢 About Gono Protocol
 
-Gono Protocol is a modular blockchain infrastructure built on Substrate as a Polkadot Parachain. It provides a universal, content-addressable rail for verifiable media, digital assets, and autonomous AI commerce using a "Pluggable Module" approach.
+Gono Protocol is a modular blockchain infrastructure built on Substrate as a Polkadot Parachain. It provides a universal, content-addressable rail for verifiable media, digital assets, and autonomous AI commerce using a pluggable pallet architecture and a Three-Tier Sovereign Governance model:
+
+- **ERC-7053 Media Receipts & DAG Provenance** (`pallet-gono-store`) — ✅ Complete (11 tests)
+- **SANUB Credibility Scoring & Reputation Engine** (`pallet-gono-verify`) — ✅ Complete (13 tests)
+- **HTTP 402 AI-Native Micropayments** (`pallet-gono-x402`) — ✅ Complete (26 tests)
+- **zk-SNARK Anonymous Attestations & Humanity Proofs** (`pallet-gono-privacy`) — ✅ Complete (18 tests)
+- **Kleros Decentralized Arbitration Bridge** (`pallet-kleros-bridge`) — ✅ Complete (7 tests)
+- **Gono Parachain Runtime** (`gono-runtime`) — ✅ Complete (6 tests, runtime integrity verified)
 
 ---
 
-## ✨ Features
+## 🏛️ Gono Sovereign Governance (Three-Tier Architecture)
 
-### Frontend
-- 🎨 **Premium Dark Theme** - Glassmorphism, gradients, and glow effects
-- 📱 **Fully Responsive** - Mobile, tablet, and desktop optimized
-- ⚡ **Server Components** - Fast rendering with Next.js App Router
-- 🔄 **Multi-Page Architecture** - 10+ routes including use cases, tools, and documentation
-- 💫 **Smooth Animations** - Hover effects, loading skeletons, micro-interactions
-- 🔮 **Visual Provenance Flow** - Intuitive stepper diagrams for complex processes
-- 🖼️ **Modern Iconography** - Professional Lucide React icons throughout
-- 🎯 **TypeScript** - Full type safety across the codebase
-- 🚀 **Vercel Deployment** - Production-ready deployment configuration
-
-### Backend
-- 🦀 **Rust + Actix-web** - High-performance async web server
-- 📊 **7 API Endpoints** - Health, stats, features, archive, partners, products, token
-- 📝 **Request Logging** - Built-in middleware for debugging
-- 🗜️ **Compression** - Gzip/Brotli support
-- 🔒 **CORS Configured** - Ready for frontend integration
-
----
-
-## 📁 Project Structure
+Per Section 6.1.5 & Section 7 of the Gono Protocol Whitepaper:
 
 ```
+                       ┌─────────────────────────┐
+                       │  Gono Sovereign Model   │
+                       └────────────┬────────────┘
+                                    │
+         ┌──────────────────────────┼──────────────────────────┐
+         │                          │                          │
+         ▼                          ▼                          ▼
+  ┌──────────────┐          ┌──────────────┐          ┌──────────────┐
+  │    Tier 1    │          │    Tier 2    │          │    Tier 3    │
+  │   Economic   │          │  Integrity   │          │  Autonomous  │
+  │  Governance  │          │  Governance  │          │  Arbitration │
+  └──────┬───────┘          └──────┬───────┘          └──────┬───────┘
+         │                         │                         │
+  Conviction Voting        Journalistic Council       Kleros Bridge
+  (pallet-democracy)      (pallet-collective)     (pallet-kleros-bridge)
+  • 0.5% Deposit           • Top 50 Analysts C_a     • Escalation
+  • 7-Day Timelock         • SANUB Parameter Veto    • On-Chain Ruling
+```
+
+1. **Tier 1: Core Economic Governance (Token-Weighted)**
+   - Powered by `pallet-democracy`, `pallet-preimage`, and `pallet-scheduler`.
+   - Conviction Voting with 7-day launch, voting, and enactment timelocks to protect protocol economics.
+2. **Tier 2: Technical & Integrity Governance (Reputation-Weighted)**
+   - Powered by `pallet-collective<Instance1>` (Journalistic Integrity Council) and `pallet-membership`.
+   - Membership automatically granted to the top 50 analysts by Analyst Credit score ($C_a \geq 0.8$). Council holds veto rights over high-impact content and SANUB scoring algorithm updates.
+3. **Tier 3: Autonomous Arbitration Governance (Epistemic Engine)**
+   - Powered by `pallet-kleros-bridge`.
+   - Enables trustless dispute escalation to decentralized Kleros courts for subjective media authenticity rulings.
+
+---
+
+## 📁 Repository Structure
+
+```text
 gono-protocol/
-├── frontend/                    # Next.js 16 + Tailwind CSS 4
-│   ├── app/
-│   │   ├── layout.tsx          # Root layout with fonts
-│   │   ├── page.tsx            # Main homepage
-│   │   ├── globals.css         # Custom dark theme styles
-│   │   ├── about/              # About page
-│   │   ├── archive/            # Archive page
-│   │   ├── build/              # Build page
-│   │   ├── careers/            # Careers page
-│   │   ├── coming-soon/        # Coming soon placeholder
-│   │   ├── docs/               # Documentation page
-│   │   ├── staking/            # Staking page
-│   │   ├── tools/              # Tools section
-│   │   ├── use-cases/          # Use cases (7 dedicated pages)
-│   │   │   ├── journalism/
-│   │   │   ├── news-verification/
-│   │   │   ├── deepfake-protection/
-│   │   │   ├── voting-integrity/
-│   │   │   ├── academic-credentials/
-│   │   │   ├── intellectual-property/
-│   │   │   └── utilities/
-│   │   └── whitepaper/         # Whitepaper page
-│   ├── components/
-│   │   ├── Navbar.tsx          # Sticky navigation with mega menu
-│   │   ├── Hero.tsx            # Hero section with live stats
-│   │   ├── Features.tsx        # Feature cards
-│   │   ├── HowItWorks.tsx      # How it works section
-│   │   ├── Architecture.tsx    # Architecture diagram
-│   │   ├── Products.tsx        # Product showcase
-│   │   ├── X402Micropayment.tsx # X402 micropayment section
-│   │   ├── UseCases.tsx        # Use cases overview
-│   │   ├── Roadmap.tsx         # Development roadmap
-│   │   ├── Archive.tsx         # Archive with filters
-│   │   ├── Ecosystem.tsx       # GONO token section
-│   │   ├── FAQ.tsx             # Frequently asked questions
-│   │   ├── CTA.tsx             # Call-to-action
-│   │   ├── Footer.tsx          # Footer with links
-│   │   ├── Skeleton.tsx        # Loading state components
-│   │   ├── Partners.tsx        # Partner logos
-│   │   └── index.ts            # Component exports
-│   ├── lib/
-│   │   └── api.ts              # API client with types
-│   └── public/                 # Static assets
+├── Cargo.toml                   # Root Cargo Workspace (Unified Polkadot SDK 2606.0.0)
+├── AGENTS.md                    # AI Agent Context & Architecture Reference
+├── README.md                    # Human-facing project README
+├── GonoProtocol_whitepaper.txt  # Full Protocol Whitepaper
 │
-├── backend/                     # Rust + Actix-web
-│   ├── Cargo.toml              # Dependencies
-│   └── src/
-│       └── main.rs             # API server with 7 endpoints
+├── pallets/                     # ═══ Substrate FRAME Pallets ═══
+│   ├── store/                  # ERC-7053 Media Receipts & CID Provenance ✅ (11 tests)
+│   ├── verify/                 # SANUB Credibility Scoring & Reputation ✅ (13 tests)
+│   ├── x402/                   # HTTP 402 State Channel Micropayments ✅ (26 tests)
+│   ├── privacy/                # zk-SNARK Verifiers & Anonymous Attestations ✅ (18 tests)
+│   └── kleros-bridge/          # Kleros Decentralized Arbitration Bridge ✅ (7 tests)
 │
-├── vercel.json                 # Vercel deployment config
-├── .gitignore
-└── README.md
+├── chain/                       # ═══ Polkadot SDK Parachain ═══
+│   ├── runtime/                # Gono Parachain Runtime (`gono-runtime`) ✅ (6 tests)
+│   └── node/                   # Parachain Node Collator CLI
+│
+├── backend/                     # Rust + Actix-web API Service
+└── frontend/                    # Next.js 16 + Tailwind CSS 4 Web App
 ```
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start & Testing
 
-### Prerequisites
-
-| Tool | Version |
-|------|---------|
-| Node.js | >= 18.x |
-| npm | >= 9.x |
-| Rust | >= 1.75 (edition 2021) |
-
-### Installation
+### Running the Test Suite (81 Total Passing Tests)
 
 ```bash
-# Clone the repository
-git clone <your-repo-url>
-cd gono-protocol
+# Run all 81 unit & integration tests across all workspace crates
+$env:SKIP_WASM_BUILD="1"; $env:CARGO_INCREMENTAL="0"; cargo test --workspace --target-dir target-ci
 
-# Install frontend dependencies
-cd frontend && npm install
-
-# Build backend
-cd ../backend && cargo build --release
+# Check workspace type alignment
+$env:SKIP_WASM_BUILD="1"; $env:CARGO_INCREMENTAL="0"; cargo check --workspace --target-dir target-ci
 ```
 
-### Running the Application
-
-Open **two terminals**:
-
-**Terminal 1 - Backend (port 8080)**
-```bash
-cd backend
-RUST_LOG=info cargo run
-```
-
-**Terminal 2 - Frontend (port 3000)**
-```bash
-cd frontend
-npm run dev
-```
-
-Then open [http://localhost:3000](http://localhost:3000) 🎉
-
----
-
-## 🌐 Available Pages
-
-| Route | Description |
-|-------|-------------|
-| `/` | Main homepage with all sections |
-| `/about` | About Gono Protocol |
-| `/archive` | Content archive |
-| `/build` | Build with Gono |
-| `/careers` | Career opportunities |
-| `/docs` | Documentation |
-| `/staking` | GONO token staking |
-| `/tools` | Developer tools |
-| `/whitepaper` | Technical whitepaper |
-| `/use-cases` | Use cases overview |
-| `/use-cases/journalism` | Gono Moncho - Journalist protection |
-| `/use-cases/news-verification` | Cross-source news verification |
-| `/use-cases/deepfake-protection` | AI deepfake protection |
-| `/use-cases/voting-integrity` | Voting integrity solution |
-| `/use-cases/academic-credentials` | Academic credential verification |
-| `/use-cases/intellectual-property` | IP protection |
-| `/use-cases/utilities` | Utility applications |
-
----
-
-## 📡 API Reference
-
-All endpoints return structured JSON:
-```json
-{
-  "success": true,
-  "data": { ... },
-  "timestamp": "2024-01-15T09:42:33Z"
-}
-```
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/health` | GET | Health check with uptime |
-| `/api/stats` | GET | Site statistics (assets, users, partners) |
-| `/api/features` | GET | List of platform features |
-| `/api/archive` | GET | Archived content items |
-| `/api/partners` | GET | Partner organizations |
-| `/api/products` | GET | Product catalog |
-| `/api/token` | GET | GONO token information |
-
-**Example:**
-```bash
-curl http://localhost:8080/api/stats
-```
-
----
-
-## 🎨 Design System
-
-### Colors
-
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--background` | `#0a0a0a` | Page background |
-| `--primary` | `#6366f1` | Indigo accent |
-| `--secondary` | `#22d3ee` | Cyan accent |
-| `--accent-green` | `#34d399` | Success states |
-
-### Typography
-
-- **Body**: Inter
-- **Mono**: Roboto Mono
-- **Display**: System serif (for italics)
-
-### Effects
-
-- **Glassmorphism**: `glass` utility class
-- **Gradients**: `gradient-primary`, `gradient-secondary`
-- **Glow**: `glow`, `glow-sm`
-- **Animations**: `animate-float`, `animate-pulse-glow`, `animate-fade-in-up`
-
----
-
-## 🛠️ Development
-
-### Frontend Commands
+### Running Individual Pallet Tests
 
 ```bash
-npm run dev      # Start development server
-npm run build    # Production build
-npm run start    # Start production server
-npm run lint     # Run ESLint
-```
+# Store Pallet (ERC-7053)
+cargo test -p pallet-gono-store
 
-### Backend Commands
+# Verify Pallet (SANUB)
+cargo test -p pallet-gono-verify
 
-```bash
-cargo run              # Development mode
-cargo build --release  # Production build
-cargo test             # Run tests
-cargo clippy           # Lint code
-```
+# x402 Micropayment Channels
+cargo test -p pallet-gono-x402
 
-### Environment Variables
+# Privacy Pallet (zk-SNARK)
+cargo test -p pallet-gono-privacy
 
-Create a `.env.local` in the frontend:
-```env
-NEXT_PUBLIC_API_URL=http://localhost:8080
+# Kleros Arbitration Bridge
+cargo test -p pallet-kleros-bridge
+
+# Runtime Integrity & Genesis Tests
+cargo test -p gono-runtime
 ```
 
 ---
 
-## � Deployment
+## 🔄 CI/CD Pipeline
 
-### Vercel (Frontend)
+The repository utilizes automated GitHub Actions (`.github/workflows/ci.yml`) triggering on pushes to `main` and all pull requests with parallel execution:
 
-The project includes a `vercel.json` configuration for seamless deployment:
+| Job | Check | Command |
+|---|---|---|
+| **Code Formatting** | `check-format` | `cargo fmt --all -- --check` |
+| **Clippy Static Analysis** | `lint-clippy` | `cargo clippy --workspace --all-targets -- -D warnings` |
+| **Unit & Integration Tests** | `unit-tests` | `cargo test --workspace --locked` |
+| **Parachain Runtime Build** | `build-runtime` | `cargo check -p gono-runtime --release` |
 
-```json
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "frontend/$1"
-    }
-  ]
-}
-```
-
-Simply connect your repository to Vercel for automatic deployments.
+Dependency caching is managed via `Swatinem/rust-cache` with isolated cache keys for sub-3-minute workflow execution. Code style is enforced via `.editorconfig` and `rustfmt.toml` adhering to Substrate tab conventions.
 
 ---
 
-## �📦 Tech Stack
+## 🤖 AI Agent Reference
 
-| Layer | Technology | Version | Purpose |
-|-------|------------|---------|---------|
-| Frontend | Next.js | 16.1.1 | React framework with App Router |
-| UI Library | React | 19.2.3 | Component-based UI |
-| Styling | Tailwind CSS | 4.x | Utility-first CSS |
-| Language | TypeScript | 5.x | Type safety |
-| Backend | Rust | 2021 Edition | Systems programming |
-| Server | Actix-web | 4.x | High-performance web framework |
-| Serialization | Serde | 1.0 | JSON handling |
-| Deployment | Vercel | - | Frontend hosting |
+For AI coding agents: read [`AGENTS.md`](./AGENTS.md) before making any changes. It contains:
+- Complete tech stack with exact dependency versions (Polkadot SDK 2606.0.0 / FRAME v48)
+- Pallet architecture reference with storage layouts and extrinsic signatures
+- Development conventions and testing workflows
 
 ---
 
-## 📄 License
-
----
-
-<p align="center">
-  Built with ❤️ using <strong>Next.js</strong>, <strong>Tailwind CSS</strong>, and <strong>Rust</strong>
-</p>
+## 📜 License
+Apache-2.0 / Unlicense
